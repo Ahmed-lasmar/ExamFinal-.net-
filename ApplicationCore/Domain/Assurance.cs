@@ -16,6 +16,7 @@ namespace ApplicationCore.Domain
 	}
 	public class Assurance
 	{
+		[Key]
 		public int AssuranceId { get; set; }
 		[Display(Name = "Date Début")]
 		public DateTime DateEffet { get; set; }

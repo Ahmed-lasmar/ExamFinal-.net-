@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace ApplicationCore.Domain
 {
 	public class Sinistre
 	{
+		[Key]
 		public int SinistreId { get; set; }
 		public DateTime DateDeclaration { get; set; }
 		public string Lieu { get; set; }
@@ -16,5 +18,6 @@ namespace ApplicationCore.Domain
 		public virtual Assurance Assurance { get; set; }
 		[ForeignKey("Assurance")]
 		public int AssuranceFK { get; set; }
+		public virtual ICollection<Expertise> Expertises { get; set; }
 	}
 }
